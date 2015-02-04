@@ -51,20 +51,21 @@ function addAll() {
 
 var abc = function() {
 	var slice = Array.prototype.slice;
+	// console.log('first args: ' + slice.call(arguments, 0));
 
 	function partialAny(fn) {
 		var orig = slice.call(arguments, 1);
-		console.log('all orig: ' + orig);
+		// console.log('all orig: ' + orig);
 		return function() {
 			var allArgs = slice.call(arguments, 0)
-			console.log('all args here: ' + allArgs);
+				// console.log('all args here: ' + allArgs);
 
 			var args = []
 			for (var i = 0; i < orig.length; i++) {
 				args[i] = orig[i] === __ ? allArgs.shift() : orig[i];
 			};
-			console.log('args here: ' + args);
-			console.log('fn: ' + fn);
+			// console.log('args here: ' + args);
+			// console.log('fn: ' + fn);
 			return fn.apply(this, args.concat(allArgs))
 		}
 	}
@@ -72,9 +73,31 @@ var abc = function() {
 };
 
 function hex(r, g, b) {
-		return '#' + r + g + b
-	}
-	// console.log(hex('11', '12', '13'));
+	return '#' + r + g + b
+}
 var __;
-var blueMax = abc(hex, __, __, 'ff');
-console.log(blueMax(hex, '11', '22')());
+//------------------------------------------//
+var blueMax = abc();
+console.log(blueMax(hex, __, __, 'ff')('11', '22'));
+//------------------------------------------//
+var realParital = function() {
+	var slice = Array.prototype.slice;
+
+	function realParitalAny(fn) {
+		var orig = slice.call(arguments, 1);
+		return function() {
+			var allArgs = slice.call(arguments, 0)
+			var args = []
+			for (var i = 0; i < orig.length; i++) {
+				args[i] = orig[i] === __ ? allArgs.shift() : orig[i];
+			};
+			return fn.apply(this, args.concat(allArgs))
+		};
+	}
+	return realParitalAny
+}();
+var __;
+//------------------------------------------//
+var blueMax1 = realParital(hex, __, __, 'ff');
+console.log(blueMax1('11', '22'));
+//------------------------------------------//
