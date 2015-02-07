@@ -5,8 +5,8 @@ function makeCounter() {
 	}
 }
 var counter = makeCounter();
-counter();
-counter();
+// counter();
+// counter();
 
 // function makeValidation() {
 // 	var result = {};
@@ -38,5 +38,16 @@ var myCounter = (function() {
 // console.log(myCounter.get());
 
 var a = new myCounter();
-console.log(a.get());
-console.log(a.increment());
+// console.log(a.get());
+// console.log(a.increment());
+// (function() {
+// 	console.log('hello world');
+// })()
+(function a() {
+	var person = {
+		sayHi: function() {
+			console.log('Hiii!!!!');
+		}
+	}
+	person.sayHi()
+})()

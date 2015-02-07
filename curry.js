@@ -60,7 +60,7 @@ function add3Param(a, b, c) {
 }
 
 var testParital = parital(add3Param, 1)
-console.log(testParital(2, 3));
-console.log(testParital(2));
-console.log('-- -- -- -- -- -- -- -- -- -- -- --');
-console.log(curry(add3Param)(1)(2)(3));
+// console.log(testParital(2, 3));
+// console.log(testParital(2));
+// console.log('-- -- -- -- -- -- -- -- -- -- -- --');
+// console.log(curry(add3Param)(1)(2)(3));

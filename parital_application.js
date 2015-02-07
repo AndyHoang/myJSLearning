@@ -78,7 +78,7 @@ function hex(r, g, b) {
 var __;
 //------------------------------------------//
 var blueMax = abc();
-console.log(blueMax(hex, __, __, 'ff')('11', '22'));
+// console.log(blueMax(hex, __, __, 'ff')('11', '22'));
 //------------------------------------------//
 var realParital = function() {
 	var slice = Array.prototype.slice;
@@ -99,5 +99,7 @@ var realParital = function() {
 var __;
 //------------------------------------------//
 var blueMax1 = realParital(hex, __, __, 'ff');
-console.log(blueMax1('11', '22'));
+// console.log(blueMax1('11', '22'));
 //------------------------------------------//
+module.exports.superPartial = realParital;
+module.exports.partial = parital;
