@@ -72,20 +72,32 @@ function returnFoo() {
 }
 console.log('foo: ' + returnFoo());
 
-console.log('bindedFoo: ' + returnFoo.bind(context)());
-
+// console.log('bindedFoo: ' + returnFoo.bind(context)());
 console.log(returnFoo.call(context));
-console.log(returnFoo.apply(context));
+// console.log(returnFoo.apply(context));
+//since Function.prototype.call function
+// 1st param of its is this object (as a function)
+console.log(Function.prototype.call.call(returnFoo, context));
 
-console.log([1, 2, 3].slice(0, 1));
+//bind mean create a new method that apply 1st param as a this
+//Function.prototype.call is a function, get the 1 as a function
+//Function.prototype.call.call(param1, param2) ==
+//                                    Function.prototype.bind(param1)(param2)
+var boundedReturnFoo = Function.prototype.call.bind(returnFoo);
+console.log(boundedReturnFoo());
+console.log(boundedReturnFoo(context));
 
-var slice = Array.prototype.slice;
 
-console.log(slice(0, 1));
-console.log(slice([1, 2, 3, 4], 0, 1));
-console.log(slice.apply([1, 2, 3, 4], [0, 1]));
-console.log(slice.call([1, 2, 3, 4, 5], 0, 3));
 
-slice = Function.prototype.call.bind(Array.prototype.slice);
-console.log(slice([1, 2, 3], 0, 2));
-console.log(Object.getOwnPropertyNames(Function.prototype.call));
+// console.log([1, 2, 3].slice(0, 1));
+
+// var slice = Array.prototype.slice;
+
+// console.log(slice(0, 1));
+// console.log(slice([1, 2, 3, 4], 0, 1));
+// console.log(slice.apply([1, 2, 3, 4], [0, 1]));
+// console.log(slice.call([1, 2, 3, 4, 5], 0, 3));
+
+// slice = Function.prototype.call.bind(Array.prototype.slice);
+// console.log(slice([1, 2, 3], 0, 2));
+// console.log(Object.getOwnPropertyNames(Function.prototype.call));
