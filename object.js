@@ -45,4 +45,4 @@ obj1.b;
 ObjMaker.prototype.c = 'third'
 console.log(obj1.c);
 console.log(obj1.__proto__);
-console.log(obj1.prototype);
+console.log(Object.getPrototypeOf(ObjMaker));

@@ -32,3 +32,48 @@ var personsList = [{
 var afterCreate = idCreator(personsList);
 
 console.log(afterCreate[0].id);
+
+var scope = 'global'
+var checkScope = function() {
+	var scope = 'local scope'
+
+	function f() {
+		return scope
+	}
+	return f()
+}
+console.log(checkScope());
+
+var uniqueCounter = (function() {
+	var count = 0;
+	return function() {
+		return ++count;
+	}
+}())
+console.log(uniqueCounter());
+console.log(uniqueCounter());
+
+function func(v) {
+	return function() {
+		return v
+	}
+}
+
+var funcs = []
+for (var i = 0; i < 10; i++) {
+	funcs[i] = func(i)
+}
+
+function create_funcs() {
+	var funcs_local = []
+	for (var i = 0; i < 10; i++) {
+		funcs_local[i] = function() {
+			return i
+		}
+
+	};
+	return funcs_local
+}
+
+var funcs2 = create_funcs()
+console.log(funcs2[5]())
