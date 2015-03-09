@@ -59,3 +59,25 @@ Range.prototype = {
 var r = new Range(10, 20);
 console.log(r.includes(3));
 console.log(r.toString());
+
+var AnotherRange = function(from, to) {
+  this.from = from;
+  this.to = to;
+}
+AnotherRange.prototype = {
+  includes: function(x) {
+    return (x >= this.from && x <= this.to)
+  },
+  foreach: function(f) {
+    for (var a = Math.ceil(this.from); a <= this.to; a++) {
+      f(a);
+    }
+  },
+  toString: function() {
+    return '( ' + this.from + ' ... ' + this.to + ' )'
+  }
+}
+
+var anotherR = new AnotherRange(12, 16);
+console.log(r.includes(13));
+anotherR.foreach(console.log);
