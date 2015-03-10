@@ -77,3 +77,27 @@ var solveProblem = function() {
 		}
 	};
 }()
+
+var testSwitch = function(i) {
+	switch (i) {
+		case 1:
+			{
+
+				console.log('case 1');
+
+			}
+		case 2:
+			{
+				console.log('case 2');
+				i = 3;
+			}
+		case 3:
+			{
+				console.log('case 3')
+				break;
+			}
+	}
+
+}
+
+testSwitch(2);
