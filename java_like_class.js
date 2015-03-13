@@ -27,3 +27,9 @@ Point._format = /^\(([^,]+),([^,]+)\)$/;
 // console.log('point radius ' + point1.radius());
 // console.log('parse point: ' + Point.parse('(3,7)').toString());
 // console.log('point zero: ' + Point.ZERO);
+var point = new Point(2, 3);
+var newPoint = {
+  __proto__: point
+}
+
+console.log(newPoint.radius.call(point));
