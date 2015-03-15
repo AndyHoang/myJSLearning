@@ -100,4 +100,34 @@ var testSwitch = function(i) {
 
 }
 
-testSwitch(2);
+// testSwitch(2);
+
+var a = [1, 2, 3, 4];
+// console.log(a.slice(0, -1));
+
+
+function testing(aArray, callback, parents) {
+	// callback.bind(null, parents);
+	aArray.forEach(callback.bind(null, parents))
+
+
+}
+
+
+function toPrintOut(i) {
+	console.log('agurments: ' + Array.prototype.slice.call(arguments));
+
+}
+
+testing(['a', 'b', 2, 3, 4], toPrintOut, 10);
+
+
+function list() {
+	console.log(arguments);
+	return (Array.prototype.slice.call(arguments));
+}
+var list1 = list(1, 2, 3);
+// console.log(list1);
+
+var list2 = list.bind(null, 5)(1, 2, 3);
+// console.log(list2);
