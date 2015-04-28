@@ -37,7 +37,7 @@ obj1 = new ObjMaker();
 
 console.log(obj1.a);
 // returns 'first'
-obj1.b;
+console.log(obj1.b);;
 // obj1 doesn't have a property called 'b', so JavaScript checks
 // its [[prototype]]. Its [[prototype]] is the same as ObjMaker.prototype
 // ObjMaker.prototype has a property called 'b' with value 'second'

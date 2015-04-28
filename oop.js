@@ -1,6 +1,6 @@
 function User(theName, theEmail) {
 	this.fullName = theName;
-	this.email = theName;
+	this.email = theEmail;
 	this.quizScores = [];
 	this.currentScore = 0;
 }
@@ -22,7 +22,10 @@ User.prototype = {
 }
 
 firstUser = new User("Richard", "Richard@examnple.com");
-console.log(firstUser.changeEmail("RichardB@examnple.com"));
+var secondUser = new User("Andy", 'andhhoang@gmail.com')
+console.log(firstUser.changeEmail("RichardEidted@examnple.com"));
+console.log(firstUser.email);
+console.log(secondUser.email);
 firstUser.saveScore(10);
 firstUser.saveScore(15);
 console.log(firstUser.showNamesAndScore());
