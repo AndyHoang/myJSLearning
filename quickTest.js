@@ -134,13 +134,17 @@ var list2 = list.bind(null, 5)(1, 2, 3);
 
 var Utils = {};
 Utils.hello = function() {
-	return "hello";
-}
-Utils.prototype.hehe = function() {
-	return 'hehe';
-}
-var anotherUtils = Object.create(Utils);
-anotherUtils.prototype.hihi = function() {
-	return 'hihi';
-}
-console.log(anotherUtils.hihi());
+		return "hello";
+	}
+	// Utils.prototype.hehe = function() {
+	// 	return 'hehe';
+	// }
+	// var anotherUtils = Object.create(Utils);
+	// anotherUtils.prototype.hihi = function() {
+	// 	return 'hihi';
+	// }
+	// console.log(anotherUtils.hihi());
+
+var myArray = ['10', '10', '10']
+var parsed = myArray.map(Number);
+console.log(parsed);

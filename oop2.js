@@ -55,6 +55,6 @@ console.log('rabbit __proto__ have contructor: ' + rabbit.__proto__.hasOwnProper
 
 console.log(rabbit.__proto__ == Rabbit.prototype);
 console.log(rabbit.constructor == Rabbit);
-
+console.log(Rabbit.prototype.constructor == rabbit.constructor);
 
 //http://www.mollypages.org/misc/js.mp
