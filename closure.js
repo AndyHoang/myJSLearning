@@ -38,6 +38,7 @@ var checkScope = function() {
 	var scope = 'local scope'
 
 	function f() {
+		//var scope = 'inside';
 		return scope
 	}
 	return f()
@@ -76,4 +77,14 @@ function create_funcs() {
 }
 
 var funcs2 = create_funcs()
-console.log(funcs2[5]())
+console.log(funcs2[5]());
+(function() {
+	var scope = 'a';
+
+	function callScope() {
+		return scope;
+	};
+	console.log(callScope());
+
+
+})();
