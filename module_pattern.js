@@ -49,3 +49,11 @@ var a;
   my.hello = 1;
   return my;
 }(a || {}))
+
+
+var employees = (function(my) {
+  my.a = 5;
+  return my;
+}(employees || {}));
+
+console.log(employees.a);
