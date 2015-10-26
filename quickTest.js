@@ -148,3 +148,14 @@ Utils.hello = function() {
 var myArray = ['10', '10', '10']
 var parsed = myArray.map(Number);
 console.log(parsed);
+
+
+var myOjbect = {
+  a : 5,
+  getA: function(){
+    console.log(this);
+    this.a = 2;
+    return this.a;
+  }
+}
+console.log('myobj: '+ myOjbect.getA())
